@@ -1,0 +1,21 @@
+{
+    "name" : "EDUCATOR",
+    "version" : "1.0.0",
+    "manifest_version" : 3,
+    "background" : {
+      "service_worker": "background.js"
+  },
+    "content_scripts": [
+      {
+        "matches": ["https://*/*", "http://*/*" ],
+        "js": ["content-script.js"]
+      }
+    ],
+      "action": {
+        "default_popup": "popup.html"
+      },
+      "permissions": [
+        "notifications", "webNavigation", "storage"
+      ],
+    "host_permissions": ["https://*/*, http://*/*, <all_urls>"]
+}
